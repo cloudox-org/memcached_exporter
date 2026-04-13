@@ -1,0 +1,18 @@
+# -*- mode: conf -*-
+
+[Unit]
+Description=Memcached stats exporter for Prometheus.
+Documentation=https://github.com/prometheus/memcached_exporter
+After=network.target
+
+[Service]
+EnvironmentFile=-/etc/default/memcached_exporter
+User=prometheus
+ExecStart=/usr/bin/memcached_exporter $MEMCACHED_EXPORTER_OPTS
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=on-failure
+RestartSec=5s
+
+
+[Install]
+WantedBy=multi-user.target

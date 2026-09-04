@@ -3,7 +3,7 @@
 %global group prometheus
 
 Name: memcached_exporter
-Version: 0.16.0
+Version: 0.17.0
 Release: 1%{?dist}
 Summary: Memcached stats exporter for Prometheus.
 License: ASL 2.0
@@ -54,5 +54,7 @@ exit 0
 %{_unitdir}/%{name}.service
 
 %changelog
+* Fri Sep 04 2026 Ivan Garcia <igarcia@cloudox.org> - 0.17.0
+- Update to 0.17.0
 * Mon Apr 13 2026 Ivan Garcia <igarcia@cloudox.org> - 0.16.0
 - Initial packaging for the 0.16.0 branch
